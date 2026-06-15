@@ -48,3 +48,39 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+
+
+
+Metro waiting on exp://192.168.1.2:8082
+› Scan the QR code above with Expo Go (Android) or the Camera app (iOS)
+
+› Web is waiting on http://localhost:8082
+
+› Using Expo Go
+› Press s │ switch to development build
+
+› Press a │ open Android
+› Press i │ open iOS simulator
+› Press w │ open web
+
+› Press j │ open debugger
+› Press r │ reload app
+› Press m │ toggle menu
+› shift+m │ more tools
+› Press o │ open project code in your editor
+
+› Press ? │ show all commands
+
+Logs for your project will appear below. Press Ctrl+C to exit.
+Android Bundled 3760ms node_modules/expo-router/entry.js (1452 modules)
+
+
+Welcome!
+👋
+Step 1: Try it
+Edit app/(tabs)/index.tsx to see changes. Press F12 to open developer tools.
+Step 2: Explore
+Tap the Explore tab to learn more about what's included in this starter app.
+Step 3: Get a fresh start
+When you're ready, run npm run reset-project to get a fresh app directory. This will move the current app to app-example.

@@ -1,98 +1,249 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { useRouter } from 'expo-router';
+import { useMemo } from 'react';
+import {
+  FlatList,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
+import BannerCarousel from '@/components/BannerCarousel';
+import CategoryCard from '@/components/CategoryCard';
+import HighlightCard from '@/components/HighlightCard';
+import ProductCard from '@/components/ProductCard';
+import ScreenHeader from '@/components/ScreenHeader';
+import SearchBar from '@/components/SearchBar';
+import { Colors } from '@/constants/colors';
+import { BorderRadius, Shadows, Spacing, Typography } from '@/constants/theme';
+import { banners } from '@/data/banners';
+import { categories } from '@/data/categories';
+import {
+  getFeaturedProducts,
+  getHighlightProducts,
+  getNewArrivals,
+  getTrendingProducts,
+  searchProducts,
+} from '@/data/products';
+import { useApp } from '@/hooks/useAppContext';
 
 export default function HomeScreen() {
-  return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+  const router = useRouter();
+  const { searchQuery, setSearchQuery } = useApp();
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+  const filteredProducts = useMemo(
+    () => searchProducts(searchQuery),
+    [searchQuery]
+  );
+
+  const featured = useMemo(() => getFeaturedProducts(), []);
+  const highlights = useMemo(() => getHighlightProducts(), []);
+  const trending = useMemo(() => getTrendingProducts(), []);
+  const newArrivals = useMemo(() => getNewArrivals(), []);
+
+  const isSearching = searchQuery.trim().length > 0;
+
+  const navigateToProduct = (id: string) => router.push(`/product/${id}`);
+  const navigateToCategory = (id: string) => router.push(`/category/${id}`);
+
+  const renderSection = (title: string, data: typeof featured) => (
+    <View style={styles.section}>
+      <View style={styles.sectionHeader}>
+        <Text style={styles.sectionTitle}>{title}</Text>
+      </View>
+      <FlatList
+        data={data}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        keyExtractor={(item) => item.id}
+        contentContainerStyle={styles.horizontalList}
+        renderItem={({ item }) => (
+          <View style={styles.horizontalCard}>
+            <ProductCard
+              product={item}
+              onPress={() => navigateToProduct(item.id)}
+              width={160}
+            />
+          </View>
+        )}
+      />
+    </View>
+  );
+
+  return (
+    <View style={styles.container}>
+      <ScreenHeader
+        showLogo
+        rightIcon="person-circle-outline"
+        onRightPress={() => router.push('/(tabs)/profile')}
+      />
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scrollContent}>
+        <View style={styles.searchContainer}>
+          <SearchBar value={searchQuery} onChangeText={setSearchQuery} />
+        </View>
+
+        {isSearching ? (
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>
+              Results ({filteredProducts.length})
+            </Text>
+            <View style={styles.grid}>
+              {filteredProducts.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  onPress={() => navigateToProduct(product.id)}
+                />
+              ))}
+            </View>
+            {filteredProducts.length === 0 && (
+              <Text style={styles.noResults}>
+                No products found for &quot;{searchQuery}&quot;
+              </Text>
+            )}
+          </View>
+        ) : (
+          <>
+            <View style={styles.bannerContainer}>
+              <BannerCarousel banners={banners} />
+            </View>
+
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>Shop by Category</Text>
+              <ScrollView
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={styles.categoryList}>
+                {categories.map((cat) => (
+                  <CategoryCard
+                    key={cat.id}
+                    category={cat}
+                    onPress={() => navigateToCategory(cat.id)}
+                  />
+                ))}
+              </ScrollView>
+            </View>
+
+            {/* Highlights of the Day — Flat 50% Off */}
+            <View style={styles.section}>
+              <View style={styles.highlightHeader}>
+                <View style={styles.highlightTitleBlock}>
+                  <Text style={styles.highlightTitle}>Highlights of the Day</Text>
+                  <Text style={styles.highlightSubtitle}>Flat 50% off — limited time</Text>
+                </View>
+                <View style={styles.dealBadge}>
+                  <Text style={styles.dealBadgeText}>50% OFF</Text>
+                </View>
+              </View>
+              <FlatList
+                data={highlights}
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                keyExtractor={(item) => item.id}
+                contentContainerStyle={styles.horizontalList}
+                renderItem={({ item }) => (
+                  <HighlightCard
+                    product={item}
+                    onPress={() => navigateToProduct(item.id)}
+                  />
+                )}
+              />
+            </View>
+
+            {renderSection('Featured', featured)}
+            {renderSection('Trending Now', trending)}
+            {renderSection('New Arrivals', newArrivals)}
+          </>
+        )}
+      </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
+  container: {
+    flex: 1,
+    backgroundColor: Colors.background,
+  },
+  scrollContent: {
+    paddingBottom: Spacing.xl,
+  },
+  searchContainer: {
+    paddingHorizontal: Spacing.md,
+    marginBottom: Spacing.md,
+  },
+  bannerContainer: {
+    paddingHorizontal: Spacing.md,
+  },
+  section: {
+    marginTop: Spacing.lg,
+  },
+  sectionHeader: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    gap: 8,
+    paddingHorizontal: Spacing.md,
+    marginBottom: Spacing.sm,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  sectionTitle: {
+    ...Typography.h3,
+    paddingHorizontal: Spacing.md,
+    marginBottom: Spacing.sm,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  highlightHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    paddingHorizontal: Spacing.md,
+    marginBottom: Spacing.sm,
+  },
+  highlightTitleBlock: {
+    flex: 1,
+  },
+  highlightTitle: {
+    ...Typography.h3,
+    marginBottom: Spacing.xs,
+  },
+  highlightSubtitle: {
+    ...Typography.bodySmall,
+    color: Colors.accent,
+    fontWeight: '600',
+  },
+  dealBadge: {
+    backgroundColor: Colors.primary,
+    paddingHorizontal: Spacing.sm + 2,
+    paddingVertical: Spacing.xs + 2,
+    borderRadius: BorderRadius.sm,
+    marginTop: Spacing.xs,
+  },
+  dealBadgeText: {
+    fontSize: 11,
+    fontWeight: '800',
+    color: Colors.white,
+    letterSpacing: 0.5,
+  },
+  categoryList: {
+    paddingHorizontal: Spacing.md,
+    paddingBottom: Spacing.sm,
+  },
+  horizontalList: {
+    paddingHorizontal: Spacing.md,
+  },
+  horizontalCard: {
+    marginRight: Spacing.md,
+  },
+  grid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    paddingHorizontal: Spacing.md,
+  },
+  noResults: {
+    ...Typography.bodySmall,
+    textAlign: 'center',
+    paddingVertical: Spacing.xl,
   },
 });
