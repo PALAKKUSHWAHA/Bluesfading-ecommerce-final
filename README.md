@@ -3,6 +3,8 @@
 Welcome to **BlueSfading**, a modern, cross-platform e-commerce mobile and web application dedicated to aesthetic home décor. Built using **React Native**, **Expo (Router)**, and **TypeScript**, this application offers a visually stunning, responsive, and seamless shopping experience across Android, iOS, and Web platforms from a single codebase.
 
 ---
+<img width="1164" height="524" alt="image" src="https://github.com/user-attachments/assets/2a58fb6d-e515-483b-a1b4-8ad12ae4b21e" />
+
 
 ## 🛠️ Tech Stack
 
