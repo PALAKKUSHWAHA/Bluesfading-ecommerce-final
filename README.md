@@ -1,7 +1,3 @@
-# Bluesfading 👾
-
-Welcome to **BlueSfading**, a modern, cross-platform e-commerce mobile and web application dedicated to aesthetic home décor. Built using **React Native**, **Expo (Router)**, and **TypeScript**, this application offers a visually stunning, responsive, and seamless shopping experience across Android, iOS, and Web platforms from a single codebase.
-
 # Bluesfading 🌊
 
 Bluesfading is a curated lifestyle and aesthetic e-commerce platform dedicated to premium home decor, artistic wall posters, and customized accessories. Built with a unified, soothing blue color palette, the interface balances minimalist layout structures with highly visual imagery to deliver a serene shopping experience.
@@ -12,28 +8,33 @@ Bluesfading is a curated lifestyle and aesthetic e-commerce platform dedicated t
 
 ### 🖥️ Discover & Marketplace Feed
 An organized, grid-based catalog showcasing product offerings, clear review metrics, promotional badges, and clean interactive navigation.
-![Uploading Screenshot 2026-06-22 at 12.57.46 PM.png…]()
+<img width="1470" height="801" alt="Screenshot 2026-06-22 at 12 57 46 PM" src="https://github.com/user-attachments/assets/28515c15-9734-4724-8eec-c6a35928fee3" />
+
 
 
 ### 🖥️ Room Inspiration Gallery
 A dynamic gallery display highlighting thematic interior combinations—such as Minimalist Living, Dark Academia, and Bohemian setups—to give users curated decor ideas.
 
-![Room Inspiration Gallery](Screenshot 2026-06-22 at 12.58.07 PM.jpg)
+<img width="1470" height="802" alt="Screenshot 2026-06-22 at 12 58 07 PM" src="https://github.com/user-attachments/assets/dd06c424-d626-4703-b1aa-765fc96c1a6e" />
+
 
 ### 🖥️ Product Deep Dive Viewport
 A premium presentation viewport layout maximizing image space to emphasize the finer textures and print details of the artwork.
 
-![Product Details View](Screenshot 2026-06-22 at 12.58.29 PM.jpg)
+<img width="1470" height="800" alt="Screenshot 2026-06-22 at 12 58 29 PM" src="https://github.com/user-attachments/assets/12e34700-9abc-4c53-9caa-8b0a801fe882" />
+
 
 ### 🖥️ Cart & Wishlist Integrations
 Seamless action controls directly embedded under visual showcases to provide rapid item tracking and streamlined transactional intent.
 
-![Product Interaction Panel](Screenshot 2026-06-22 at 12.58.29 PM_2.jpg)
+<img width="1470" height="802" alt="Screenshot 2026-06-22 at 12 57 01 PM" src="https://github.com/user-attachments/assets/b4f548cc-023b-4d71-9bf3-aef6ed25d615" />
+
 
 ### 🖥️ Profile & Settings Workspace
 A clean, centralized client management screen with structured routing options for order history, saved parameters, and account status indicators.
 
-![User Profile View](Screenshot 2026-06-22 at 12.59.57 PM.png)
+<img width="1470" height="801" alt="Screenshot 2026-06-22 at 12 59 57 PM" src="https://github.com/user-attachments/assets/2be1551d-90c3-49c3-b38d-44ae94407a7b" />
+
 
 ---
 
