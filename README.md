@@ -2,39 +2,53 @@
 
 Welcome to **BlueSfading**, a modern, cross-platform e-commerce mobile and web application dedicated to aesthetic home décor. Built using **React Native**, **Expo (Router)**, and **TypeScript**, this application offers a visually stunning, responsive, and seamless shopping experience across Android, iOS, and Web platforms from a single codebase.
 
+# Bluesfading 🌊
+
+Bluesfading is a curated lifestyle and aesthetic e-commerce platform dedicated to premium home decor, artistic wall posters, and customized accessories. Built with a unified, soothing blue color palette, the interface balances minimalist layout structures with highly visual imagery to deliver a serene shopping experience.
+
 ---
 
 ## 📸 Screenshots
 
-### Welcome & Exploration Splash
-![Welcome Screen](assets/screenshots/welcome-screen.png)
+### 🖥️ Discover & Marketplace Feed
+An organized, grid-based catalog showcasing product offerings, clear review metrics, promotional badges, and clean interactive navigation.
 
-### Discovery Dashboard
-![Home Feed](assets/screenshots/home-feed.png)
+![Product Catalog Grid](Screenshot 2026-06-22 at 12.57.46 PM.jpg)
 
-### Marketplace Catalog
-![Catalog](assets/screenshots/catalog.png)
+### 🖥️ Room Inspiration Gallery
+A dynamic gallery display highlighting thematic interior combinations—such as Minimalist Living, Dark Academia, and Bohemian setups—to give users curated decor ideas.
 
-### Product Details
-![Product Details](assets/screenshots/product-details.png)
+![Room Inspiration Gallery](Screenshot 2026-06-22 at 12.58.07 PM.jpg)
 
-### Profile & Settings
-![Profile](assets/screenshots/profile.png)
+### 🖥️ Product Deep Dive Viewport
+A premium presentation viewport layout maximizing image space to emphasize the finer textures and print details of the artwork.
 
-## 🛠️ Tech Stack
+![Product Details View](Screenshot 2026-06-22 at 12.58.29 PM.jpg)
 
-| Layer | Technology |
-| --- | --- |
-| **Frontend Framework** | React Native (Expo SDK) |
-| **Routing & Navigation** | Expo Router (File-based) |
-| **Language** | TypeScript |
-| **State Management** | React Context API / Redux Toolkit |
-| **Network & API** | Axios / REST APIs |
-| **UI Components** | React Native Paper & Custom Reusable UI |
-| **Design & Tooling** | Figma, VS Code, Git |
+### 🖥️ Cart & Wishlist Integrations
+Seamless action controls directly embedded under visual showcases to provide rapid item tracking and streamlined transactional intent.
+
+![Product Interaction Panel](Screenshot 2026-06-22 at 12.58.29 PM_2.jpg)
+
+### 🖥️ Profile & Settings Workspace
+A clean, centralized client management screen with structured routing options for order history, saved parameters, and account status indicators.
+
+![User Profile View](Screenshot 2026-06-22 at 12.59.57 PM.png)
 
 ---
 
+## 🎨 Design System
+
+*   **Primary Accent:** Cool Cerulean (`#8EB1D1`)
+*   **Base Theme:** Light Blue Grey (`#C4D8E5`)
+*   **Contrast Elements:** Midnight Blue (`#1C2B48`)
+*   **Canvas Background:** Platinum (`#E8ECEF`)
+
+## 🛠️ Built With
+
+*   Frontend Architecture (e.g., React / Tailwind CSS / Flutter)
+*   State Management Architecture
+*   Responsive Vector Graphics & Components
 ## ✨ Features
 
 ### 🛒 User Experience
