@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 import CustomButton from '@/components/CustomButton';
-import EmptyState from '@/components/EmptyState';
+import EmptyStatePremium from '@/components/EmptyStatePremium';
 import ScreenHeader from '@/components/ScreenHeader';
 import { Colors } from '@/constants/colors';
 import { BorderRadius, Shadows, Spacing, Typography } from '@/constants/theme';
@@ -24,10 +24,10 @@ export default function CartScreen() {
     return (
       <View style={styles.container}>
         <ScreenHeader title="Cart" />
-        <EmptyState
+        <EmptyStatePremium
           icon="bag-outline"
-          title="Your cart is empty"
-          message="Discover beautiful décor and add items to your cart."
+          title="Your Cart is Empty"
+          message="Discover premium, aesthetic home décor items and fill your home with style."
           actionLabel="Start Shopping"
           onAction={() => router.push('/(tabs)')}
         />

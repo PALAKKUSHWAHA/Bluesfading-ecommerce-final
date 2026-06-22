@@ -40,11 +40,11 @@ export default function CustomButton({
   textStyle,
 }: CustomButtonProps) {
   const variantStyles = {
-    primary: { bg: Colors.primary, text: Colors.white, border: Colors.primary },
-    secondary: { bg: Colors.white, text: Colors.primary, border: Colors.border },
-    outline: { bg: 'transparent', text: Colors.primary, border: Colors.primary },
+    primary: { bg: Colors.primary, text: Colors.accent, border: Colors.primary },
+    secondary: { bg: Colors.primaryLight, text: Colors.accent, border: Colors.primaryLight },
+    outline: { bg: 'transparent', text: Colors.accent, border: Colors.accent },
     accent: { bg: Colors.accent, text: Colors.white, border: Colors.accent },
-    ghost: { bg: 'transparent', text: Colors.primary, border: 'transparent' },
+    ghost: { bg: 'transparent', text: Colors.accent, border: 'transparent' },
   };
 
   const sizeStyles = {
@@ -63,13 +63,18 @@ export default function CustomButton({
       style={({ pressed }) => [
         styles.button,
         {
-          backgroundColor: v.bg,
-          borderColor: v.border,
+          backgroundColor: pressed
+            ? (variant === 'primary' ? Colors.primaryLight : Colors.primary)
+            : v.bg,
+          borderColor: pressed
+            ? (variant === 'primary' ? Colors.primaryLight : Colors.primary)
+            : v.border,
           paddingVertical: s.paddingVertical,
           paddingHorizontal: s.paddingHorizontal,
-          opacity: pressed ? 0.85 : disabled ? 0.5 : 1,
+          transform: [{ scale: pressed ? 0.97 : 1 }],
+          opacity: disabled ? 0.5 : 1,
         },
-        variant === 'primary' && Shadows.button,
+        (variant === 'primary' || variant === 'accent') && Shadows.button,
         fullWidth && styles.fullWidth,
         style,
       ]}>
@@ -99,7 +104,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: BorderRadius.lg,
+    borderRadius: BorderRadius.xl, // Round corners to 24px
     borderWidth: 1.5,
   },
   fullWidth: {
@@ -109,7 +114,7 @@ const styles = StyleSheet.create({
     marginRight: Spacing.sm,
   },
   text: {
-    fontWeight: '600',
-    letterSpacing: 0.3,
+    fontWeight: '700',
+    letterSpacing: 0.5,
   },
 });

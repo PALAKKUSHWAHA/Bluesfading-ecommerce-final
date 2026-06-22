@@ -69,17 +69,17 @@ export default function HighlightCard({ product, onPress }: HighlightCardProps) 
 const styles = StyleSheet.create({
   container: {
     width: 280,
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.card,
     borderRadius: BorderRadius.xl,
     overflow: 'hidden',
     marginRight: Spacing.md,
     borderWidth: 1.5,
-    borderColor: Colors.accent,
+    borderColor: Colors.primaryLight,
     ...Shadows.card,
   },
   pressed: {
-    opacity: 0.92,
-    transform: [{ scale: 0.98 }],
+    opacity: 0.95,
+    transform: [{ scale: 0.97 }],
   },
   imageContainer: {
     height: 180,
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
   discountText: {
     fontSize: 11,
     fontWeight: '800',
-    color: Colors.white,
+    color: Colors.accent, // Midnight Blue text
     letterSpacing: 0.6,
   },
   wishlistButton: {
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: BorderRadius.full,
-    backgroundColor: 'rgba(0,0,0,0.4)',
+    backgroundColor: 'rgba(28, 43, 72, 0.45)', // Midnight Blue transparent backdrop
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -134,6 +134,7 @@ const styles = StyleSheet.create({
   name: {
     ...Typography.body,
     fontWeight: '700',
+    color: Colors.accent, // Midnight Blue text
     marginBottom: Spacing.xs,
     lineHeight: 22,
   },
@@ -146,11 +147,11 @@ const styles = StyleSheet.create({
   salePrice: {
     ...Typography.price,
     fontSize: 20,
-    color: Colors.primary,
+    color: Colors.accent, // Midnight Blue sale price
   },
   originalPrice: {
     ...Typography.bodySmall,
     textDecorationLine: 'line-through',
-    color: Colors.textLight,
+    color: Colors.textSecondary,
   },
 });

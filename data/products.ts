@@ -2,6 +2,29 @@ import { Product } from '@/types';
 
 export const products: Product[] = [
   {
+    id: 'h3',
+    name: 'Aesthetic Blue Wall Collage Kit',
+    category: 'wall-posters',
+    description:
+      'A beautifully curated set of 20+ prints featuring traditional Japanese architecture, ocean waves, cosmic starry skies, and inspiring typography in elegant shades of blue. Perfect for building a stunning, cohesive aesthetic collage on your bedroom or dorm wall.',
+    price: 29.99,
+    originalPrice: 59.99,
+    discountPercent: 50,
+    isHighlight: true,
+    rating: 4.9,
+    imageUrl: '',
+    imageLocal: require('@/assets/products/blue-collage.jpg'),
+    featured: true,
+    trending: true,
+    isNew: true,
+    features: [
+      '20+ premium aesthetic prints',
+      'High-quality 4x6" cardstock',
+      'Cohesive royal/navy blue theme',
+      'Includes mounting adhesive',
+    ],
+  },
+  {
     id: 'h1',
     name: "Spirited Away Collector's Edition Poster",
     category: 'wall-posters',

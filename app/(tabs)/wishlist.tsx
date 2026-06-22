@@ -1,7 +1,7 @@
 import { useRouter } from 'expo-router';
 import { FlatList, StyleSheet, View } from 'react-native';
 
-import EmptyState from '@/components/EmptyState';
+import EmptyStatePremium from '@/components/EmptyStatePremium';
 import ProductCard from '@/components/ProductCard';
 import ScreenHeader from '@/components/ScreenHeader';
 import { Colors } from '@/constants/colors';
@@ -21,11 +21,11 @@ export default function WishlistScreen() {
     return (
       <View style={styles.container}>
         <ScreenHeader title="Wishlist" />
-        <EmptyState
+        <EmptyStatePremium
           icon="heart-outline"
-          title="Your wishlist is empty"
-          message="Save your favorite décor pieces and find them here anytime."
-          actionLabel="Explore Collection"
+          title="Your Wishlist is Empty"
+          message="Save your favorite aesthetic home décor items and view them anytime."
+          actionLabel="Explore Collections"
           onAction={() => router.push('/(tabs)')}
         />
       </View>

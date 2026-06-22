@@ -8,16 +8,24 @@ interface SearchBarProps {
   value: string;
   onChangeText: (text: string) => void;
   placeholder?: string;
+  onFilterPress?: () => void;
+  onFocus?: () => void;
+  onBlur?: () => void;
+  hasActiveFilters?: boolean;
 }
 
 export default function SearchBar({
   value,
   onChangeText,
   placeholder = 'Search décor, posters, art...',
+  onFilterPress,
+  onFocus,
+  onBlur,
+  hasActiveFilters = false,
 }: SearchBarProps) {
   return (
     <View style={styles.container}>
-      <Ionicons name="search-outline" size={20} color={Colors.textLight} />
+      <Ionicons name="search-outline" size={20} color={Colors.textLight} style={styles.searchIcon} />
       <TextInput
         style={styles.input}
         value={value}
@@ -26,10 +34,25 @@ export default function SearchBar({
         placeholderTextColor={Colors.textLight}
         returnKeyType="search"
         autoCorrect={false}
+        onFocus={onFocus}
+        onBlur={onBlur}
       />
       {value.length > 0 && (
-        <Pressable onPress={() => onChangeText('')} hitSlop={8}>
+        <Pressable onPress={() => onChangeText('')} hitSlop={8} style={styles.clearBtn}>
           <Ionicons name="close-circle" size={20} color={Colors.textLight} />
+        </Pressable>
+      )}
+      {onFilterPress && (
+        <Pressable 
+          onPress={onFilterPress} 
+          hitSlop={8} 
+          style={[styles.filterBtn, hasActiveFilters && styles.filterBtnActive]}
+        >
+          <Ionicons 
+            name="options-outline" 
+            size={20} 
+            color={hasActiveFilters ? Colors.white : Colors.primary} 
+          />
         </Pressable>
       )}
     </View>
@@ -42,16 +65,32 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: Colors.white,
     borderRadius: BorderRadius.lg,
-    paddingHorizontal: Spacing.md,
-    paddingVertical: Spacing.sm + 2,
+    paddingLeft: Spacing.md,
+    paddingRight: Spacing.xs,
+    paddingVertical: Spacing.xs,
     borderWidth: 1,
     borderColor: Colors.border,
     ...Shadows.card,
   },
+  searchIcon: {
+    marginRight: Spacing.xs,
+  },
   input: {
     flex: 1,
-    marginLeft: Spacing.sm,
     fontSize: 15,
     color: Colors.text,
+    paddingVertical: Spacing.sm,
+  },
+  clearBtn: {
+    paddingHorizontal: Spacing.xs,
+  },
+  filterBtn: {
+    padding: Spacing.sm,
+    borderRadius: BorderRadius.md,
+    backgroundColor: Colors.background,
+    marginLeft: Spacing.xs,
+  },
+  filterBtnActive: {
+    backgroundColor: Colors.primary,
   },
 });

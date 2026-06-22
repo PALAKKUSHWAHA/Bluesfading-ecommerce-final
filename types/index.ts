@@ -70,3 +70,47 @@ export function hasDiscount(product: Product) {
     product.originalPrice != null
   );
 }
+
+export interface User {
+  username: string;
+  email: string;
+}
+
+export interface Review {
+  id: string;
+  userName: string;
+  rating: number;
+  comment: string;
+  date: string;
+}
+
+export interface Coupon {
+  code: string;
+  discountPercent?: number;
+  discountFlat?: number;
+  minAmount?: number;
+}
+
+export interface OrderAddress {
+  fullName: string;
+  street: string;
+  city: string;
+  state: string;
+  zip: string;
+  phone: string;
+}
+
+export interface Order {
+  id: string;
+  items: CartItem[];
+  subtotal: number;
+  shipping: number;
+  discount: number;
+  total: number;
+  couponCode?: string;
+  paymentMethod: string;
+  address: OrderAddress;
+  status: 'confirmed' | 'packed' | 'shipped' | 'delivered';
+  date: string;
+}
+

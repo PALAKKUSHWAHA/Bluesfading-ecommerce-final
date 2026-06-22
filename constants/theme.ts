@@ -32,7 +32,7 @@ export const Spacing = {
 export const BorderRadius = {
   sm: 8,
   md: 12,
-  lg: 16,
+  lg: 20,
   xl: 24,
   full: 999,
 };
@@ -44,22 +44,22 @@ export const Typography = {
   body: { fontSize: 16, fontWeight: '400' as const, color: AppColors.text },
   bodySmall: { fontSize: 14, fontWeight: '400' as const, color: AppColors.textSecondary },
   caption: { fontSize: 12, fontWeight: '400' as const, color: AppColors.textLight },
-  price: { fontSize: 18, fontWeight: '700' as const, color: AppColors.primary },
+  price: { fontSize: 18, fontWeight: '700' as const, color: AppColors.accent }, // Accent is dark midnight blue
 };
 
 export const Shadows = {
   card: {
-    shadowColor: AppColors.shadow,
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 1,
-    shadowRadius: 12,
-    elevation: 4,
+    shadowColor: AppColors.accent,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.06,
+    shadowRadius: 16,
+    elevation: 3,
   },
   button: {
-    shadowColor: AppColors.primary,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 8,
-    elevation: 3,
+    shadowColor: AppColors.accent,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
+    elevation: 2,
   },
 };

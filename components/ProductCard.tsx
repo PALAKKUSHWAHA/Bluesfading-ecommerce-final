@@ -32,7 +32,7 @@ export default function ProductCard({
         { width },
         pressed && styles.pressed,
       ]}>
-      <View style={styles.imageContainer}>
+      <View style={[styles.imageContainer, { height: width * 1.25 }]}>
         <Image
           source={getProductImageSource(product)}
           style={styles.image}
@@ -82,19 +82,19 @@ export default function ProductCard({
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.white,
-    borderRadius: BorderRadius.lg,
+    backgroundColor: Colors.card,
+    borderRadius: BorderRadius.xl, // 24px rounded corners
     overflow: 'hidden',
     marginBottom: Spacing.md,
     ...Shadows.card,
   },
   pressed: {
-    opacity: 0.92,
-    transform: [{ scale: 0.98 }],
+    opacity: 0.95,
+    transform: [{ scale: 0.97 }],
   },
   imageContainer: {
-    height: PRODUCT_CARD_WIDTH * 1.1,
     position: 'relative',
+    backgroundColor: 'rgba(28, 43, 72, 0.05)',
   },
   image: {
     width: '100%',
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     width: 36,
     height: 36,
     borderRadius: BorderRadius.full,
-    backgroundColor: 'rgba(0,0,0,0.35)',
+    backgroundColor: 'rgba(28, 43, 72, 0.45)', // Midnight Blue transparent backdrop
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: Spacing.sm,
     left: Spacing.sm,
-    backgroundColor: Colors.accent,
+    backgroundColor: Colors.primaryLight,
     paddingHorizontal: Spacing.sm,
     paddingVertical: 2,
     borderRadius: BorderRadius.sm,
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
   badgeText: {
     fontSize: 10,
     fontWeight: '700',
-    color: Colors.white,
+    color: Colors.accent,
     letterSpacing: 0.5,
   },
   discountBadge: {
@@ -138,16 +138,16 @@ const styles = StyleSheet.create({
   discountText: {
     fontSize: 10,
     fontWeight: '800',
-    color: Colors.white,
+    color: Colors.accent,
     letterSpacing: 0.4,
   },
   info: {
-    padding: Spacing.sm + 2,
+    padding: Spacing.md - 2,
   },
   name: {
     ...Typography.bodySmall,
-    fontWeight: '600',
-    color: Colors.text,
+    fontWeight: '700',
+    color: Colors.accent, // Midnight Blue text
     marginBottom: Spacing.xs,
     lineHeight: 18,
   },
@@ -162,10 +162,11 @@ const styles = StyleSheet.create({
   price: {
     ...Typography.price,
     fontSize: 16,
+    color: Colors.accent, // Midnight Blue price
   },
   originalPrice: {
     ...Typography.caption,
     textDecorationLine: 'line-through',
-    color: Colors.textLight,
+    color: Colors.textSecondary,
   },
 });
