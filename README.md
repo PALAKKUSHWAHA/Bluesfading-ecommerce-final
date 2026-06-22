@@ -8,14 +8,17 @@ Bluesfading is a curated lifestyle and aesthetic e-commerce platform dedicated t
 
 ### 🖥️ Discover & Marketplace Feed
 An organized, grid-based catalog showcasing product offerings, clear review metrics, promotional badges, and clean interactive navigation.
-<img width="1470" height="801" alt="Screenshot 2026-06-22 at 12 57 46 PM" src="https://github.com/user-attachments/assets/28515c15-9734-4724-8eec-c6a35928fee3" />
+
+<img width="1470" height="738" alt="Screenshot 2026-06-22 at 9 03 10 PM" src="https://github.com/user-attachments/assets/3c9c065d-0984-4d51-a602-08e6946b0326" />
+
 
 
 
 ### 🖥️ Room Inspiration Gallery
 A dynamic gallery display highlighting thematic interior combinations—such as Minimalist Living, Dark Academia, and Bohemian setups—to give users curated decor ideas.
 
-<img width="1470" height="802" alt="Screenshot 2026-06-22 at 12 58 07 PM" src="https://github.com/user-attachments/assets/dd06c424-d626-4703-b1aa-765fc96c1a6e" />
+<img width="1470" height="740" alt="Screenshot 2026-06-22 at 9 03 36 PM" src="https://github.com/user-attachments/assets/53ccd1bd-13b7-4b3d-bfdf-1be5e1022cba" />
+
 
 
 ### 🖥️ Product Deep Dive Viewport
