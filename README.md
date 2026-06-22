@@ -6,32 +6,20 @@ Welcome to **BlueSfading**, a modern, cross-platform e-commerce mobile and web a
 
 ## 📸 Screenshots
 
-### 🖥️ Welcome & Exploration Splash
-The entry page features an immersive, multi-aesthetic mood board designed to capture the brand's visual identity instantly and guide the user onward.
+### Welcome & Exploration Splash
+![Welcome Screen](assets/screenshots/welcome-screen.png)
 
-![Welcome Splash Screen](image_636183.jpg)
+### Discovery Dashboard
+![Home Feed](assets/screenshots/home-feed.png)
 
-### 🖥️ Discovery Dashboard & Home Feed
-A personalized dashboard showcasing trending categories (Wall Posters, Canvas Paintings, Dreamcatchers) alongside dynamic "Highlights of the Day" collections.
+### Marketplace Catalog
+![Catalog](assets/screenshots/catalog.png)
 
-![Homepage Feed](image_6361a9.jpg)
+### Product Details
+![Product Details](assets/screenshots/product-details.png)
 
-### 🖥️ Curated Marketplace Catalog
-An organized, grid-based catalog showcasing product offerings, clear review metrics, promotional badges, and clean interactive elements.
-
-![Product Catalog Grid](image_6361e3.jpg)
-
-### 🖥️ Product Detail Viewport
-A premium presentation viewport layout maximizing image space to emphasize the finer textures and print details of the artwork.
-
-![Product Details View](image_636526.jpg)
-
-### 🖥️ Profile & Settings Workspace
-A clean, centralized client management screen with structured routing options for order history, saved parameters, and settings.
-
-![User Profile View](image_636580.png)
-
----
+### Profile & Settings
+![Profile](assets/screenshots/profile.png)
 
 ## 🛠️ Tech Stack
 
