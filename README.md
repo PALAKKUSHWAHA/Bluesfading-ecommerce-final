@@ -1,7 +1,7 @@
 # Bluesfading 🌊
 
 Bluesfading is a curated lifestyle and aesthetic e-commerce platform dedicated to premium home decor, artistic wall posters, and customized accessories. Built with a unified, soothing blue color palette, the interface balances minimalist layout structures with highly visual imagery to deliver a serene shopping experience.
-
+<img width="1470" height="802" alt="Screenshot 2026-06-22 at 12 57 01 PM" src="https://github.com/user-attachments/assets/b4f548cc-023b-4d71-9bf3-aef6ed25d615" />
 ---
 
 ## 📸 Screenshots
@@ -27,7 +27,7 @@ A premium presentation viewport layout maximizing image space to emphasize the f
 ### 🖥️ Cart & Wishlist Integrations
 Seamless action controls directly embedded under visual showcases to provide rapid item tracking and streamlined transactional intent.
 
-<img width="1470" height="802" alt="Screenshot 2026-06-22 at 12 57 01 PM" src="https://github.com/user-attachments/assets/b4f548cc-023b-4d71-9bf3-aef6ed25d615" />
+<img width="1470" height="800" alt="Screenshot 2026-06-22 at 1 28 37 PM" src="https://github.com/user-attachments/assets/2cf5fd67-ec10-4958-98ea-4ef90e3368b8" />
 
 
 ### 🖥️ Profile & Settings Workspace
